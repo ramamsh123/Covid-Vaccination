@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign-in/Register</title>
+    <link rel="icon" type="image/x-icon" href="flyhigh.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="download.png">
+    </header>
+
+    <main class="admin-background">
+        <div class="container">
+            <div class="form" id="signin-form">
+                <h2>Sign In</h2>
+                <div id="admin-login-form">
+                    <input type="email" id="email1" name="email" placeholder="Email" required><br>
+                    <input type="password" id="password1" name="password" placeholder="Password" required>
+                    <button id="login">Sign In</button>
+                </div>
+                <p class="register-text" style="color: wheat;">Don't have an account? <a href="#" id="register-btn">Register</a></p>
+            </div>
+
+            <div class="form" id="register-form" style="display: none;">
+                <h2>Registration</h2>
+                <div id="admin-registration-form">
+                    <input type="email" id="email2" name="email" placeholder="Email" required><br>
+                    <input type="password" id="password2" name="password" placeholder="Password" required>
+                    <button id="register">Register</button>
+                </div>
+                <p class="register-text" style="color: wheat;">Already have an account? <a href="#" id="signin-btn">Sign In</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Show register form and hide sign-in form
+        document.getElementById("register-btn").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("register-form").style.display = "block";
+            document.getElementById("signin-form").style.display = "none";
+        });
+
+        // Show sign-in form and hide register form
+        document.getElementById("signin-btn").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("signin-form").style.display = "block";
+        });
+    </script>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCWntLU3OtWw1jc7FEsFoWXfKdbFHWBTUo",
+  authDomain: "devrev-d3b53.firebaseapp.com",
+  projectId: "devrev-d3b53",
+  storageBucket: "devrev-d3b53.appspot.com",
+  messagingSenderId: "829483840932",
+  appId: "1:829483840932:web:c6aab5f6ebca1b143d3d31",
+  measurementId: "G-6WNSBGB4W4"
+};
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+
+
+
+    document.getElementById("register").addEventListener('click', function(){
+        var email2 = document.querySelector("#email2").value;
+        var password2 = document.querySelector("#password2").value;
+
+        if(email2.slice(-5) == "ac.in"){
+            createUserWithEmailAndPassword(auth, email2, password2)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                alert("user created succesfully");
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage)
+                // ..
+            });
+        } else{
+            alert("Invalid type of Email for Admin")
+        }
+    })
+
+
+    document.getElementById("login").addEventListener('click', function(){
+        var email1 = document.getElementById("email1").value;
+        var password1 = document.getElementById("password1").value;
+
+        if(email1.slice(-5) == "ac.in"){
+            signInWithEmailAndPassword(auth, email1, password1)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                alert("Login Successful")
+                window.location = "adminmain.html"
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage)
+            });
+        } else{
+            alert("Invalid email for admin login")
+        }
+    })
+    
+  </script>
+
+</html>

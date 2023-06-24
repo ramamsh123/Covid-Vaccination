@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlotBooking</title>
+    <script src="https://kit.fontawesome.com/265aaa2447.js" crossorigin="anonymous"></script>   
+    <link rel="stylesheet" href="userhome.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slotbooking.css">
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        <img src="download.png">
+    </header>
+    <div class="slide">
+        <ul id="sidemenu" class="sidemenu">
+            <li><a href="userhome.html">Dashboard</a></li>
+            <li><a href="#">Covid Slot Booking</a></li>
+            <li><a href="index.html" id="logout">LogOut</a></li>
+            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+        </ul>
+    </div>
+
+
+    <div class="location-selection">
+        <h4 style="color: wheat;">Select your nearest Covid Vaccination Center from here.</h4>
+        <div class="from">
+            <label for="fromLocation" class="label-from" style="color: aliceblue;">Centres:</label>
+            <select id="fromLocation" name="fromLocation" class="fromLocation">
+                <option value="new-york">Jagtial</option>
+                <option value="london">Hyderabad</option>
+                <option value="paris">Karimnagar</option>
+                <option value="toronto">Nizamabad</option>
+                <option value="hyderabad">Adilabad</option>
+            </select>
+        </div>
+        
+        
+        <br>
+    
+        <button onclick="nextPage()">Submit</button>
+    </div>
+
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+
+        function openMenu(){
+            sidemenu.style.left = "0";
+        }
+
+        function closeMenu(){
+            sidemenu.style.left = "-280px";
+        }
+    </script>
+
+    <script>
+        function nextPage(){
+            var fromLocation = document.querySelector('#fromLocation').value;
+            localStorage.setItem("From", fromLocation); 
+            window.location = "slots.html";
+        }
+
+        document.getElementById('logout').addEventListener('click', function(){
+            window.location = "index.html";
+        })
+    </script>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+  
+    import { update, getDatabase, ref, child, onValue, get, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCWntLU3OtWw1jc7FEsFoWXfKdbFHWBTUo",
+  authDomain: "devrev-d3b53.firebaseapp.com",
+  projectId: "devrev-d3b53",
+  storageBucket: "devrev-d3b53.appspot.com",
+  messagingSenderId: "829483840932",
+  appId: "1:829483840932:web:c6aab5f6ebca1b143d3d31",
+  measurementId: "G-6WNSBGB4W4"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  
+    const db = getDatabase();
+    const auth = getAuth(app);
+
+
+  </script>
+</html>

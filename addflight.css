@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-image: url("https://media.istockphoto.com/id/1332501286/photo/aerial-flying-airplane-and-sky-landscape-close-up.jpg?s=170667a&w=0&k=20&c=dM5w_73VjhgAhE0tSeJLC_2Cpp1zu-3zsCS38_3DdrU=");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #inputForm {
+    margin-top: 100px;
+    margin-left: 200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #555;
+    box-shadow: 8px 8px;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 8px 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  #list-container {
+    margin-top: 100px;
+    margin-left: 200px;
+    background-color: #f2f2f2;
+    width: 550px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #555;
+    box-shadow: 8px 8px;
+  }
+  
+  .table {
+    padding: 12px;
+  }
+  
+  .thead {
+    background-color: #555;
+  }
+  
+  #tbody1 {
+    background-color: blue;
+  }
+  
+  .thead th {
+    padding: 20px;
+    font-size: 18px;
+    color: wheat;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+  #tbody1 td {
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    #inputForm,
+    #list-container {
+      margin-left: 20px;
+      margin-right: 20px;
+      max-width: none;
+      width: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+        background-image: url("https://media.istockphoto.com/id/1332501286/photo/aerial-flying-airplane-and-sky-landscape-close-up.jpg?s=170667a&w=0&k=20&c=dM5w_73VjhgAhE0tSeJLC_2Cpp1zu-3zsCS38_3DdrU=");
+        background-repeat: no-repeat;
+        background-size: 500px 1200px;
+      }
+    #inputForm {
+      margin-top: 50px;
+      padding: 10px;
+    }
+  
+    #list-container {
+      margin-top: 50px;
+      padding: 10px;
+    }
+  }
+  

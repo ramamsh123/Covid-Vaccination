@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-HomePage</title>  
+    <script src="https://kit.fontawesome.com/265aaa2447.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="userhome.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        <img src="download.png">
+    </header>
+    <div class="slide">
+        <ul id="sidemenu" class="sidemenu">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="slotbooking.html">Covid Slot Booking</a></li>
+            <li><a href="index.html" id="logout">LogOut</a></li>
+            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+        </ul>
+    </div>
+
+    <div class="user-container">
+        <h1 id="welcome-note" style="color: wheat;"></h1>
+        <h1 style="color: wheat;">Click on the Navigation bar at top left to avail our features</h1>
+    </div>
+
+
+
+
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+
+        function openMenu(){
+            sidemenu.style.left = "0";
+        }
+
+        function closeMenu(){
+            sidemenu.style.left = "-280px";
+        }
+
+
+        document.getElementById("welcome-note").innerHTML = "Welcome, "+localStorage.getItem("email");
+
+
+    </script>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+  
+    import { update, getDatabase, ref, child, onValue, get, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCWntLU3OtWw1jc7FEsFoWXfKdbFHWBTUo",
+  authDomain: "devrev-d3b53.firebaseapp.com",
+  projectId: "devrev-d3b53",
+  storageBucket: "devrev-d3b53.appspot.com",
+  messagingSenderId: "829483840932",
+  appId: "1:829483840932:web:c6aab5f6ebca1b143d3d31",
+  measurementId: "G-6WNSBGB4W4"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  
+    const db = getDatabase();
+    const auth = getAuth(app);
+
+  </script>
+</html>

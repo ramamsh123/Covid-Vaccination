@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("corona.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidemenu{
+    height: 100%;
+    width: 280px;
+    left: -280px;
+    position:fixed;
+    background-color: cadetblue;
+    transition: 0.5s ease;
+    box-shadow: 5px 10px #333;
+    z-index: 2;
+}
+
+.slide .sidemenu h1{
+    margin-top: 30px;
+    color: rgb(28,4,244);
+    font-weight: 800;
+    text-align: center;
+    font-size: 58px;
+    padding: 10px 0;
+    pointer-events: none;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color: black;
+    font-weight: 500;
+    font-size: 28px;
+    padding: 30px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.5s ease-out;
+    text-align: center;
+}
+
+ul li:hover a{
+    padding-left: 20px;
+    background: rgb(28,4,244);
+    background: linear-gradient(90deg, rgba(28,4,244,1) 0%, rgba(244,0,74,1) 80%, rgba(221,41,120,1) 100%, rgba(0,0,251,1) 100%);
+    border-radius: 12px;
+    color: white;
+}
+
+.fa-solid{
+    font-size: 28px;
+    padding: 12px;
+    display: block;
+    cursor: pointer;
+}
+
+
+.slide ul .fa-solid{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 30px;
+}
+
+.user-container{
+    margin-top: 300px;
+    margin-left: 200px;
+    width: 680px;
+    padding: 12px;
+    text-align: center;
+}
+
+.special-container{
+    margin-left: 300px;
+    width: 300px;
+    height: 180px;
+    border: 4px solid black;
+    border-radius: 16px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.special-container p{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.special{
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature{
+    margin-top: 400px;
+    margin-right: 200px;
+}
+
+@media (max-width: 600px) {
+    .sidemenu {
+      left: 0;
+    }
+    body{
+        background-image: url("corona.jpeg");
+        background-repeat: no-repeat;
+        background-size: 500px 1000px;
+    }
+    
+    .slide .sidemenu h1 {
+      font-size: 40px;
+      margin-top: 20px;
+    }
+    
+    .slide ul .fa-solid {
+      top: 5px;
+      right: 10px;
+      font-size: 26px;
+    }
+    
+    .user-container {
+      margin-top: 150px;
+      margin-left: 20px;
+      width: 90%;
+    }
+    
+    .special-container {
+      margin: 20px auto;
+      width: 90%;
+      height: auto;
+    }
+    
+    .special-container p {
+      font-size: 16px;
+    }
+    
+    .feature {
+      margin-top: 200px;
+      margin-right: 20px;
+    }
+  }

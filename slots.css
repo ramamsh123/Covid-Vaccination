@@ -1,0 +1,66 @@
+#list-container {
+    margin: 150px 50px;
+    width: 90%;
+    max-width: 380px;
+    padding: 12px;
+    text-align: center;
+}
+
+#availabilty-container {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 90%;
+    max-width: 380px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #555;
+    box-shadow: 8px 8px;
+    visibility: hidden;
+}
+
+#availabilty-container label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#seats {
+    font-size: 16px;
+    padding: 6px;
+}
+
+#bookTickets {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#list-container h2 {
+    padding: 12px;
+    margin-top: 18px;
+    background-color: rgb(6, 6, 118);
+    color: white;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.row {
+    padding: 12px;
+}
+
+.row ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    text-align: left;
+    font-size: 18px;
+    background-color: skyblue;
+}
+
+.row ul li:hover {
+    background: rgb(28,4,244);
+    background: linear-gradient(90deg, rgba(28,4,244,1) 0%, rgba(244,0,74,1) 80%, rgba(221,41,120,1) 100%, rgba(0,0,251,1) 100%);
+    color: white;
+    border: 2px solid black;
+    padding-left: 20px;
+    box-shadow: 12px 12px #555;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminAddSlots</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="addflight.css">
+</head>
+<body>
+    <header>
+        <img src="download.png">
+    </header>
+    <div id="inputForm">
+        <input type="text" id="nameInput" placeholder="Slot Date" required><br>
+        <input type="text" id="numberInput1" placeholder="Slot Time" required><br>
+        <button id="submitButton">Add Slot</button>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function(){
+            alert("Slot Added Successfully")
+        })
+    </script>
+</body>
+
+</html>
